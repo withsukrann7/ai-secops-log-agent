@@ -36,7 +36,7 @@ def generate_successful_log(current_time : datetime) -> str:
     ip = random.choice(CORPORATE_IPS)
     port = random.randint(30000,65000)
 
-    return f"{timestamp} {hostname} sshd{pid}]: Accept password for {username} from {ip} port {port} ssh2\n"
+    return f"{timestamp} {hostname} sshd[{pid}]: Accept password for {username} from {ip} port {port} ssh2\n"
 def generate_failed_log(current_time: datetime, is_invalid_user: bool = False, custom_ip: str = None) -> str:
     """
     Başarısız bir giriş denemesi logu üretir. 
