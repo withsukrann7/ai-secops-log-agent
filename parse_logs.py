@@ -25,7 +25,7 @@ print(f"[+] Başarılı! Toplam {len(raw_lines)} satır log bellek üzerine alı
 
 # 'for' kelimesini zorunlu yapıyoruz, sadece 'invalid user' kısmını opsiyonel (? ile) yapıyoruz:
 LOG_PATTERN = re.compile(
-    r"^(\w+\s+\d{1,2})\s+(\d{2}:\d{2}:\d{2})\s+(\S+)\s+(\w+)\[(\d+)\]:\s+(Accepted|Failed|Accept)\s+password\s+for\s+(?:invalid\s+use?r\s+)?(\S+)\s+from\s+(\d+\.\d+\.\d+\.\d+)\s+port\s+(\d+)\s+ssh2"
+    r"^(\w+\s+\d{1,2})\s+(\d{2}:\d{2}:\d{2})\s+(\S+)\s+(\w+)\[(\d+)\]:\s+(Accepted|Failed|Accept)\s+password\s+for\s+(?:invalid\s+user\s+)?(\S+)\s+from\s+(\d+\.\d+\.\d+\.\d+)\s+port\s+(\d+)\s+ssh2"
 )
 
 parsed_data = [] #yapılandırılmış kayıtlar eklenecek.
@@ -67,4 +67,4 @@ if not processed_dir.exists():
 output_file = processed_dir / "cleaned_auth_logs.csv"
 df.to_csv(output_file, index=False)
 
-print(f"[+] Tebrikler! Temizlenmiş loglar başarıyla {output_file} \ndosyasına kaydedildi.")
+print(f"[+] Tebrikler! Temizlenmiş loglar başarıyla {output_file}  dosyasına kaydedildi.")
